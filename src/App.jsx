@@ -1,10 +1,10 @@
 import "./App.css";
-import Button from "./components/UI/HsButton";
+import Input from "./components/UI/HsInput";
 
 function App() {
   return (
-    <div className="h-screen flex items-center justify-center dark:bg-VeryDarkBlue">
-      <Button title="Button" />
+    <div className="h-screen flex items-center justify-center dark:bg-Midnight">
+      <Input />
     </div>
   );
 }
