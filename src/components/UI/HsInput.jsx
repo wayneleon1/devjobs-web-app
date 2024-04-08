@@ -3,7 +3,7 @@ import { MdSearch } from "react-icons/md";
 
 function Input() {
   return (
-    <div className="text-lg py-4 px-8 bg-white rounded-md flex items-center dark:bg-VeryDarkBlue">
+    <div className="py-4 px-6 text-base bg-white rounded-md flex items-center dark:bg-VeryDarkBlue">
       <MdSearch className="text-PrimaryViolet size-8" />
       <input
         type="text"
