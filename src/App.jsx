@@ -1,11 +1,8 @@
-import "./App.css";
-import JobCard from "./components/JobCard";
+import AppRouters from "./routes/AppRouters";
 
 function App() {
   return (
-    <div className="h-screen flex items-center justify-center bg-LightGrey dark:bg-Midnight">
-      <JobCard />
-    </div>
+   <AppRouters/>
   );
 }
 
