@@ -1,10 +1,10 @@
 import "./App.css";
-import Input from "./components/UI/HsInput";
+import JobCard from "./components/JobCard";
 
 function App() {
   return (
-    <div className="h-screen flex items-center justify-center dark:bg-Midnight">
-      <Input />
+    <div className="h-screen flex items-center justify-center bg-LightGrey dark:bg-Midnight">
+      <JobCard />
     </div>
   );
 }
