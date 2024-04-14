@@ -27,7 +27,7 @@ function HomeLayout() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-10">
+      <div className="container mx-auto px-10 py-7">
         <Outlet />
       </div>
     </div>
