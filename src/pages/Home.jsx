@@ -7,7 +7,7 @@ import data from "../dummy/data";
 function Home() {
   return (
     <div className="relative">
-      <div className="absolute top-[-35px] z-10">
+      <div className="absolute top-[-50px] z-10">
         <div className="grid grid-cols-4  gap-[1px] w-full ">
           <div className="col-span-2">
             <Input placeholder="Filter by title, companies, expertise…" />
