@@ -6,8 +6,8 @@ import moonIcon from "../assets/desktop/icon-moon.svg";
 
 function HomeLayout() {
   return (
-    <div className="bg-LightGrey h-screen dark:bg-Midnight">
-      <div className="h-40 w-full bg-PrimaryViolet flex items-center">
+    <div className="bg-LightGrey  dark:bg-Midnight">
+      <div className="h-40 w-full flex items-center bg-[url('./assets/desktop/bg-pattern-header.svg')] bg-no-repeat">
         <div className="container mx-auto px-10 flex items-center justify-between">
           <div>
             <img src={logo} alt="Logo" />
@@ -27,7 +27,7 @@ function HomeLayout() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-10">
+      <div className="container mx-auto px-10 ">
         <Outlet />
       </div>
     </div>
