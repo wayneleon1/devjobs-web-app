@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import logo from "../assets/desktop/logo.svg";
 import sunIcon from "../assets/desktop/icon-sun.svg";
 import moonIcon from "../assets/desktop/icon-moon.svg";
@@ -10,7 +10,9 @@ function HomeLayout() {
       <div className="h-40 w-full flex items-center bg-[url('./assets/desktop/bg-pattern-header.svg')] bg-no-repeat">
         <div className="container mx-auto px-10 flex items-center justify-between">
           <div>
-            <img src={logo} alt="Logo" />
+            <Link to="/">
+              <img src={logo} alt="Logo" />
+            </Link>
           </div>
           <div className="flex items-center gap-4">
             <div>
@@ -27,7 +29,7 @@ function HomeLayout() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-10 ">
+      <div className="container mx-auto px-10 py-6">
         <Outlet />
       </div>
     </div>

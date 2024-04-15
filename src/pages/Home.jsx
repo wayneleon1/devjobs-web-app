@@ -7,12 +7,12 @@ import data from "../dummy/data";
 function Home() {
   return (
     <div className="relative">
-      <div className="absolute top-[-35px] z-10">
-        <div className="grid grid-cols-4  gap-[1px] w-full ">
+      <div className="absolute top-[-50px] z-10">
+        <div className="grid grid-cols-4  gap-[1px] w-full">
           <div className="col-span-2">
             <Input placeholder="Filter by title, companies, expertise…" />
           </div>
-          <div className=" col-span-1">
+          <div className="col-span-1">
             <Input placeholder="Filter by location…" />
           </div>
           <div className="col-span-1 flex items-center justify-between  rounded-md px-4 bg-white dark:bg-VeryDarkBlue">
