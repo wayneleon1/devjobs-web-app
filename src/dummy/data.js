@@ -26,7 +26,7 @@ const data = [
     companyName: "Blogr",
     companySite: "blogr.com",
     companyLogo: blogr,
-    companyColor: "#e54d25",
+    companyColor: "#E54D25",
     jobTitle: "Haskell and PureScript Dev",
     jobType: "Part Time",
     Published: "20h ago",

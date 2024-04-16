@@ -1,10 +1,9 @@
 import React from "react";
-import { MdSearch } from "react-icons/md";
 
-function Input({ placeholder }) {
+function Input({ placeholder, icon }) {
   return (
-    <div className="py-4 px-6 text-base bg-white rounded-md flex items-center dark:bg-VeryDarkBlue">
-      <MdSearch className="text-PrimaryViolet size-8" />
+    <div className="py-4 px-6 text-base rounded-md flex items-center">
+      {icon}
       <input
         type="text"
         placeholder={placeholder}
