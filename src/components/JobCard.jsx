@@ -25,7 +25,7 @@ function JobCard({
             </p>
           </div>
           <div>
-            <h3 className="font-bold text-VeryDarkBlue cursor-pointer hover:text-DarkGrey dark:text-white">
+            <h3 className="font-bold text-VeryDarkBlue cursor-pointer hover:text-DarkGrey dark:text-white duration-300">
               <Link to={`/${jobTitle}`}>{jobTitle}</Link>
             </h3>
           </div>
