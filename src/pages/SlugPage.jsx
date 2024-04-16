@@ -36,7 +36,7 @@ function SlugPage() {
             <div>
               <Button
                 title="Company Site"
-                styles="text-[#5964E0] bg-PrimaryViolet/10 hover:bg-PrimaryViolet/30 dark:bg-white/10 dark:text-white dark:hover:bg-white/25"
+                styles="text-PrimaryViolet bg-PrimaryViolet/10 hover:bg-PrimaryViolet/30 dark:bg-white/10 dark:!text-white dark:hover:bg-white/25 !text-PrimaryViolet"
               />
             </div>
           </div>
