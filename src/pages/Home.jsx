@@ -27,7 +27,7 @@ function Home() {
             <div className="flex items-center gap-1">
               <input
                 type="checkbox"
-                class="appearance-none bg-VeryDarkBlue/10 dark:bg-white/10 dark:hover:bg-white/25 checked:bg-PrimaryViolet checked:border-transparent checked:outline-none size-5 rounded-sm cursor-pointer hover:bg-PrimaryViolet/25"
+                class="bg-VeryDarkBlue/10 dark:bg-white/10 dark:hover:bg-white/25 checked:bg-PrimaryViolet checked:border-transparent checked:outline-none size-5 rounded-sm cursor-pointer hover:bg-PrimaryViolet/25"
               />
               <p className="font-medium dark:text-white ">Full Time Only</p>
             </div>
