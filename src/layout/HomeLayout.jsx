@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import logo from "../assets/desktop/logo.svg";
 import sunIcon from "../assets/desktop/icon-sun.svg";
@@ -6,6 +6,7 @@ import moonIcon from "../assets/desktop/icon-moon.svg";
 import BgImg from "../assets/desktop/bg-pattern-header.svg";
 
 function HomeLayout() {
+  const [toggled, setTogged] = useState(false);
   return (
     <>
       <div className="h-40 w-full flex items-center">
@@ -26,8 +27,15 @@ function HomeLayout() {
               <img src={sunIcon} alt="Sun-Icon" className="size-5" />
             </div>
             <div>
-              <div className="bg-white rounded-2xl w-12 h-6 p-[5px] flex items-center justify-start">
-                <div className=" bg-PrimaryViolet  w-4 h-4 rounded-full"></div>
+              <div
+                className={`bg-white rounded-2xl w-12 h-6 p-[5px] flex items-center ${
+                  toggled ? "justify-end" : "justify-start"
+                }`}
+              >
+                <div
+                  className="bg-PrimaryViolet  w-4 h-4 rounded-full cursor-pointer"
+                  onClick={() => setTogged(!toggled)}
+                ></div>
               </div>
             </div>
             <div>
