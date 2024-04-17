@@ -145,6 +145,20 @@ function SlugPage() {
           </div>
         </div>
       </div>
+      <div className="hidden">
+        <div className="bg-[#E99210]"></div>
+        <div className="bg-[#E54D25]"></div>
+        <div className="bg-[#34353f]"></div>
+        <div className="bg-[#2F4FC7]"></div>
+        <div className="bg-[#132034]"></div>
+        <div className="bg-[#4E1853]"></div>
+        <div className="bg-[#4722C6]"></div>
+        <div className="bg-[#21427D]"></div>
+        <div className="bg-[#F2DECB]"></div>
+        <div className="bg-[#1F1F1F]"></div>
+        <div className="bg-[#37C790]"></div>
+        <div className="bg-[#F16718]"></div>
+      </div>
     </>
   );
 }

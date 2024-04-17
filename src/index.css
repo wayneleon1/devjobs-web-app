@@ -26,11 +26,3 @@ p {
   font-size: 16px;
   line-height: 26px;
 }
-body {
-  background-color: #f4f6f8;
-}
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121721;
-  }
-}
