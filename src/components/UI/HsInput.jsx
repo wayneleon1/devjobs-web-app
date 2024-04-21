@@ -2,7 +2,7 @@ import React from "react";
 
 function Input({ placeholder, icon }) {
   return (
-    <div className="py-4 px-6 text-base rounded-md flex items-center">
+    <div className="py-4 px-6 text-base rounded-md flex items-center w-full">
       {icon}
       <input
         type="text"

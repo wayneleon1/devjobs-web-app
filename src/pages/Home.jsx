@@ -29,19 +29,19 @@ function Home() {
     <div className="relative">
       <div className="absolute top-[-50px] z-10 w-full">
         <div className="grid md:grid-cols-3 lg:grid-cols-4  gap-[1px]  bg-white dark:bg-VeryDarkBlue rounded-sm">
-          <div className="md:col-span-1 lg:col-span-2 border-r-[1px] border-DarkGrey/20">
+          <div className="md:col-span-1 lg:col-span-2 border-r-[1px] border-DarkGrey/20 flex items-center">
             <Input
               icon={<MdSearch className="text-PrimaryViolet size-7" />}
               placeholder="Filter by title, companies, expertise…"
             />
           </div>
-          <div className="col-span-1 border-r-[1px] border-DarkGrey/20">
+          <div className="col-span-1 border-r-[1px] border-DarkGrey/20 flex items-center">
             <Input
               icon={<MdLocationOn className="text-PrimaryViolet size-7" />}
               placeholder="Filter by location…"
             />
           </div>
-          <div className="col-span-1 flex items-center justify-between px-4">
+          <div className="col-span-1 flex items-center justify-between px-4 py-2">
             <div className="flex items-center gap-1">
               <input
                 type="checkbox"
@@ -49,7 +49,7 @@ function Home() {
               />
               <p className="font-medium dark:text-white ">Full Time Only</p>
             </div>
-            <Button title="Search" />
+            <Button title="Search" styles="" />
           </div>
         </div>
       </div>

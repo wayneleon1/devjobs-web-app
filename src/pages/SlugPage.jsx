@@ -53,7 +53,7 @@ function SlugPage() {
               <h1 className="font-bold text-VeryDarkBlue dark:text-white">
                 {job.company}
               </h1>
-              <p className="text-DarkGrey">{job.website}</p>
+              <p className="text-DarkGrey ">{job.website}</p>
             </div>
             <div>
               <Button
