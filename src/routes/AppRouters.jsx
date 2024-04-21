@@ -9,7 +9,7 @@ function AppRouters() {
     <Routes>
       <Route element={<HomeLayout />}>
         <Route index element={<Home />} />
-        <Route path="/:job" element={<SlugPage />} />
+        <Route path="/:JobId" element={<SlugPage />} />
       </Route>
     </Routes>
   );

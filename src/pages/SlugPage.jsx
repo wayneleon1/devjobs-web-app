@@ -1,10 +1,28 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Button from "../components/UI/HsButton";
-import scoot from "../assets/logos/scoot.svg";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function SlugPage() {
-  const { job } = useParams();
+  const { JobId } = useParams();
+
+  const [job, setJob] = useState([]);
+  const [ispending, setIsPending] = useState(true);
+
+  const getJob = async () => {
+    const response = await axios.get(
+      `http://localhost:8080/api/v1/devjobs/job/${JobId}`
+    );
+    const data = response.data.data;
+    setJob(data);
+    setIsPending(false);
+  };
+
+  useEffect(() => {
+    getJob();
+  }, []);
+
   const requirements = [
     { content: "Morbi interdum mollis sapien. Sed" },
     {
@@ -21,20 +39,25 @@ function SlugPage() {
   ];
   return (
     <>
+      {ispending && <p className="">Loading</p>}
+
       <div className="relative pt-20">
         <div className="h-[140px] flex rounded-md overflow-hidden absolute top-[-50px] left-0 right-0">
-          <div className="h-full w-[140px] bg-[#E99210] flex items-center justify-center">
-            <img src={scoot} alt="Job-Img" className="w-20" />
+          <div
+            className={`h-full w-[140px] bg-[${job.logoBackground}] flex items-center justify-center`}
+          >
+            <img src={job.logo} alt="Job-Img" className="w-20" />
           </div>
           <div className="h-full flex-1 bg-white flex items-center justify-between p-10 dark:bg-VeryDarkBlue">
             <div>
               <h1 className="font-bold text-VeryDarkBlue dark:text-white">
-                Scoot
+                {job.company}
               </h1>
-              <p className="text-DarkGrey">scoot.com</p>
+              <p className="text-DarkGrey">{job.website}</p>
             </div>
             <div>
               <Button
+                path={job.website}
                 title="Company Site"
                 styles="text-PrimaryViolet bg-PrimaryViolet/10 hover:bg-PrimaryViolet/30 dark:bg-white/10 dark:!text-white dark:hover:bg-white/25 !text-PrimaryViolet"
               />
@@ -45,36 +68,25 @@ function SlugPage() {
           <div className="flex items-center justify-between">
             <div className="flex flex-col gap-2">
               <div>
-                <p className="text-DarkGrey">1w ago . Part Time</p>
+                <p className="text-DarkGrey">
+                  {job.createdAt} . {job.contract}
+                </p>
               </div>
               <div>
                 <h1 className="font-bold text-VeryDarkBlue dark:text-white">
-                  {job}
+                  {job.position}
                 </h1>
               </div>
               <div>
-                <h4 className="font-bold text-PrimaryViolet">United Kingdom</h4>
+                <h4 className="font-bold text-PrimaryViolet">{job.location}</h4>
               </div>
             </div>
             <div>
-              <Button title="Apply Now" />
+              <Button title="Apply Now" path={job.apply} />
             </div>
           </div>
           <div>
-            <p className="text-DarkGrey">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-              Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi
-              neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium,
-              ligula sollicitudin laoreet viverra, tortor libero sodales leo,
-              eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo.
-              Suspendisse potenti. Sed egestas, ante et vulputate volutpat, eros
-              pede semper est, vitae luctus metus libero eu augue. Morbi purus
-              libero, faucibus adipiscing, commodo quis, gravida id, est. Sed
-              lectus. Praesent elementum hendrerit tortor. Sed semper lorem at
-              felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque
-              euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede
-              arcu, dapibus eu, fermentum et, dapibus sed, urna.
-            </p>
+            <p className="text-DarkGrey">{job.description}</p>
           </div>
           <div>
             <h3 className="font-bold mb-7 text-VeryDarkBlue dark:text-white">
@@ -92,11 +104,9 @@ function SlugPage() {
             <div className="flex gap-2 flex-col">
               {requirements.map((item, index) => {
                 return (
-                  <div className="flex items-center gap-9">
+                  <div className="flex items-center gap-9" key={index}>
                     <div className="w-[8px] h-[8px] bg-PrimaryViolet rounded-full"></div>
-                    <p className="text-DarkGrey" key={index}>
-                      {item.content}
-                    </p>
+                    <p className="text-DarkGrey">{item.content}</p>
                   </div>
                 );
               })}
@@ -118,13 +128,11 @@ function SlugPage() {
             <div className="flex gap-2 flex-col">
               {requirements.map((item, index) => {
                 return (
-                  <div className="flex items-center gap-9">
+                  <div className="flex items-center gap-9" key={index}>
                     <div className="text-PrimaryViolet font-semibold">
                       {index + 1}
                     </div>
-                    <p className="text-DarkGrey" key={index}>
-                      {item.content}
-                    </p>
+                    <p className="text-DarkGrey">{item.content}</p>
                   </div>
                 );
               })}
@@ -136,12 +144,12 @@ function SlugPage() {
         <div className="container mx-auto px-10 py-6 flex items-center justify-between">
           <div>
             <h1 className="font-bold text-VeryDarkBlue dark:text-white mb-3">
-              {job}
+              {job.position}
             </h1>
             <p className="text-DarkGrey">So Digital Inc.</p>
           </div>
           <div>
-            <Button title="Apply Now" />
+            <Button title="Apply Now" path={job.apply} />
           </div>
         </div>
       </div>

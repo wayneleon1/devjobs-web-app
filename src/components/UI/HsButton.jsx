@@ -1,12 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Button({ title, styles }) {
+function Button({ title, styles, path }) {
   return (
-    <button
-      className={`${styles} bg-PrimaryViolet py-2 px-[20px] text-white font-semibold rounded-md hover:bg-LightViolet duration-300`}
+    <Link
+      to={path}
+      className={`${styles} bg-PrimaryViolet py-4 px-[20px] text-white font-semibold rounded-md hover:bg-LightViolet duration-300`}
     >
       {title}
-    </button>
+    </Link>
   );
 }
 

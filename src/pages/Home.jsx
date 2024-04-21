@@ -5,8 +5,26 @@ import JobCard from "../components/JobCard";
 import data from "../dummy/data";
 import { MdSearch } from "react-icons/md";
 import { MdLocationOn } from "react-icons/md";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Home() {
+  const [jobs, setJobs] = useState([]);
+  const [ispending, setIsPending] = useState(true);
+
+  const getJobs = async () => {
+    const response = await axios.get(
+      "http://localhost:8080/api/v1/devjobs/job"
+    );
+    const data = response.data.data;
+    setJobs(data);
+    setIsPending(false);
+  };
+
+  useEffect(() => {
+    getJobs();
+  }, []);
+
   return (
     <div className="relative">
       <div className="absolute top-[-50px] z-10 w-full">
@@ -36,20 +54,26 @@ function Home() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10  gap-x-5 pt-20">
-        {data.map((ele, index) => {
-          return (
-            <JobCard
-              key={index}
-              companyName={ele.companyName}
-              jobTitle={ele.jobTitle}
-              jobType={ele.jobType}
-              logo={ele.companyLogo}
-              Published={ele.Published}
-              companyColor={ele.companyColor}
-              location={ele.location}
-            />
-          );
-        })}
+        {ispending && <p className="">Loading...</p>}
+        {jobs && jobs ? (
+          jobs.map((ele) => {
+            return (
+              <JobCard
+                key={ele.id}
+                JobId={ele.id}
+                companyName={ele.company}
+                jobTitle={ele.position}
+                jobType={ele.contract}
+                logo={ele.logo}
+                Published={ele.createdAt}
+                companyColor={ele.logoBackground}
+                location={ele.location}
+              />
+            );
+          })
+        ) : (
+          <p>No Job available </p>
+        )}
       </div>
       <div className="flex items-center justify-center py-5">
         <Button title="Load more" />
