@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function JobCard({
+  JobId,
   logo,
   companyName,
   Published,
@@ -26,7 +27,7 @@ function JobCard({
           </div>
           <div>
             <h3 className="font-bold text-VeryDarkBlue cursor-pointer hover:text-DarkGrey dark:text-white duration-300">
-              <Link to={`/${jobTitle}`}>{jobTitle}</Link>
+              <Link to={`/${JobId}`}>{jobTitle}</Link>
             </h3>
           </div>
           <div>
