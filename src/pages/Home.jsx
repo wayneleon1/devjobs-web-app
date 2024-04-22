@@ -2,7 +2,6 @@ import React from "react";
 import Input from "../components/UI/HsInput";
 import Button from "../components/UI/HsButton";
 import JobCard from "../components/JobCard";
-import data from "../dummy/data";
 import { MdSearch } from "react-icons/md";
 import { MdLocationOn } from "react-icons/md";
 import { useState, useEffect } from "react";
